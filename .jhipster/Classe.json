@@ -1,0 +1,34 @@
+{
+    "name": "Classe",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nbStudents",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "teacher",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "student",
+            "otherEntityRelationshipName": "classe",
+            "relationshipName": "eleve"
+        }
+    ],
+    "changelogDate": "20190922191537",
+    "entityTableName": "classe",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

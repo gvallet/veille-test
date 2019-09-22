@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="student">
+            <h2><span jhiTranslate="veilletestApp.student.detail.title">Student</span> {{student.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="veilletestApp.student.name">Name</span></dt>
+                <dd>
+                    <span>{{student.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="veilletestApp.student.firstName">First Name</span></dt>
+                <dd>
+                    <span>{{student.firstName}}</span>
+                </dd>
+                <dt><span jhiTranslate="veilletestApp.student.averageGrade">Average Grade</span></dt>
+                <dd>
+                    <span>{{student.averageGrade}}</span>
+                </dd>
+                <dt><span jhiTranslate="veilletestApp.student.classe">Classe</span></dt>
+                <dd>
+                    <div *ngIf="student.classe">
+                        <a [routerLink]="['/classe', student.classe?.id, 'view']">{{student.classe?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/student', student.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

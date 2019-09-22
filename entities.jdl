@@ -1,0 +1,15 @@
+entity Classe {
+    name String,
+    nbStudents Integer,
+    teacher String
+}
+
+entity Student {
+    name String,
+    firstName String,
+    averageGrade Integer
+}
+
+relationship OneToMany {
+    Classe{eleve} to Student
+}
